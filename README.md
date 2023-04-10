@@ -1,1 +1,1 @@
-# Photoresistor-Digital-Camera
+# Photoresistor Digital Camera
