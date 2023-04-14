@@ -1,24 +1,27 @@
-int p1 = A0;
-int p2 = A1;
-int p3 = A2;
-int p4 = A3;
-int p5 = A4;
-int p6 = A5;
+int sensor1 = A0;
+int sensor2 = A1;
+int sensor3 = A2;
+int sensor4 = A3;
+int sensor5 = A4;
+int sensor6 = A5;
 
-int val1;
-int val2;
-int val3;
-int val4;
-int val5;
-int val6;
+int pixel1;
+int pixel2;
+int pixel3;
+int pixel4;
+int pixel5;
+int pixel6;
+
+int A = 3; 
+int B = 4;
+int C = 5;
 
 void setup() {
-  pinMode(p1, INPUT);
-  pinMode(p2, INPUT);
-  pinMode(p3, INPUT);
-  pinMode(p4, INPUT);
-  pinMode(p5, INPUT);
-  pinMode(p6, INPUT);
+  Serial.begin(9600);
+  
+  digitalWrite(3, OUTPUT);
+  digitalWrite(4, OUTPUT);
+  digitalWrite(5, OUTPUT);
 }
 
 void loop() {
