@@ -25,6 +25,10 @@ with serial.Serial('COM5', 9600, timeout=1) as ser:
             x = (i % 8) * 80
             y = (i // 8) * 80
             Drawer.rectangle((x, y, x+80, y+80), fill=(num, num, num), outline=None)
+            
+            # Print the number on the rectangle
+            text_color = (255 - num, 255 - num, 255 - num)  # Invert the color for better visibility
+            Drawer.text((x + 30, y + 30), str(num), fill=text_color)
 
         # Show the image on the screen
         img.show()
