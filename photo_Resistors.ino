@@ -43,7 +43,7 @@ void setup() {
 
 void loop() {
 
-  for (int i = 0; i < 7; i++) {
+  for (int i = 0; i < 8; i++) {
       if (i == 0) {
         digitalWrite(3, LOW);
         digitalWrite(4, LOW);
