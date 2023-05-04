@@ -1,5 +1,5 @@
 # Photoresistor Digital Camera
-Project made by Connor Grammens, Jie Feng and Andrew Lopez.
+Project made by Connor Grammens and Jie Feng
 
 # photoresistor.ino
 
