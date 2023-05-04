@@ -1,12 +1,15 @@
 int sensor;
 int pixel;
-bool but = 1;
+bool but = 0;
 
 int A = 3; // Corresponds to a 0b001 binary for most of the multiplexer
 int B = 4; // Corresponds to a 0b010 binary for most of the multiplexer
 int C = 5; // Corresponds to a 0b100 binary for most of the multiplexer
 int EN = 2;
+const int buttonPin = 12;
+
 int SENSE = 1023;
+int buttonState = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -14,6 +17,7 @@ void setup() {
   pinMode(B, OUTPUT);
   pinMode(C, OUTPUT);
   pinMode(EN, OUTPUT);
+  pinMode(buttonPin, INPUT);
 
   digitalWrite(A, LOW);
   digitalWrite(B, LOW);
@@ -22,6 +26,13 @@ void setup() {
 }
 
 void loop() {
+  buttonState = digitalRead(buttonPin);
+  if (buttonState == 1) {
+    but = 1;
+    digitalWrite(2, LOW);
+  } else if (buttonState == 0) {
+    digitalWrite(2, HIGH);
+  }
   while (but == 1) {
     //////////////////////////////////////////////row 1/////////////////////////////////////////////////////////
     for (int i = 0; i < 8; i++) {
@@ -597,6 +608,6 @@ void loop() {
     }
     Serial.println(";");
     but = 0;
-
   }
+  delay(1000);
 }
