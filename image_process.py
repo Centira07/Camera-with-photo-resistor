@@ -34,8 +34,13 @@ with serial.Serial('COM12', 9600, timeout=1) as ser:
         # Show the image on the screen
         img = img.rotate(90, expand=True)
         img.show()
+        img.save("photo.png")
 
 
 
     except serial.SerialException as e:
         print(f"Serial port error: {e}")
+
+
+
+
