@@ -2,9 +2,9 @@ int sensor;
 int pixel;
 bool but = 0;
 
-int A = 3; // Corresponds to a 0b001 binary for most of the multiplexer
-int B = 4; // Corresponds to a 0b010 binary for most of the multiplexer
-int C = 5; // Corresponds to a 0b100 binary for most of the multiplexer
+int s0 = 3; // Corresponds to a 0b001 binary for most of the multiplexer
+int s1 = 4; // Corresponds to a 0b010 binary for most of the multiplexer
+int s2 = 5; // Corresponds to a 0b100 binary for most of the multiplexer
 int EN = 2;
 const int buttonPin = 12;
 
@@ -13,15 +13,15 @@ int buttonState = 0;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(A, OUTPUT);
-  pinMode(B, OUTPUT);
-  pinMode(C, OUTPUT);
+  pinMode(s0, OUTPUT);
+  pinMode(s1, OUTPUT);
+  pinMode(s2, OUTPUT);
   pinMode(EN, OUTPUT);
   pinMode(buttonPin, INPUT);
 
-  digitalWrite(A, LOW);
-  digitalWrite(B, LOW);
-  digitalWrite(C, LOW);
+  digitalWrite(s0, LOW);
+  digitalWrite(s1, LOW);
+  digitalWrite(s2, LOW);
   digitalWrite(EN, LOW);
 }
 
@@ -72,7 +72,7 @@ void loop() {
 
       int sensor = analogRead(A0);
 
-      int pixel = map(sensor, 0, SENSE, 0, 255);
+      int pixel = map(sensor, 0, SENSE, 0, 255); // Graphs photoresistor value to a lower value that python can use for a pixel value
       if (i < 7) {
         Serial.print(pixel);
         Serial.print(",");
