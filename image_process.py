@@ -1,7 +1,6 @@
 import time
 import serial
 from PIL import Image, ImageDraw
-import re
 
 # Set up serial communication with Arduino
 with serial.Serial('COM12', 9600, timeout=1) as ser:
